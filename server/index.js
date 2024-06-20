@@ -26,13 +26,13 @@ app.use('/images', express.static('images'));
 
 
 dotenv.config();
-//const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 //const CONNECTION =process.env.MONGODB_CONNECTION;
 mongoose.set('strictQuery', false); 
 mongoose
   .connect('mongodb+srv://tafsir:4BF66GfvMmYwERiC@cluster0.57kzw84.mongodb.net/', { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => app.listen(5000, () => console.log(`Listening at Port 5000`)))
+  .then(() => app.listen(PORT, () => console.log(`Listening at Port ${PORT}`)))
   .catch((error) => console.log(`${error} did not connect`));
 
 
