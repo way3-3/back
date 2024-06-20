@@ -29,8 +29,9 @@ dotenv.config();
 //const PORT = process.env.PORT;
 
 //const CONNECTION =process.env.MONGODB_CONNECTION;
+mongoose.set('strictQuery', false); 
 mongoose
-  .connect('mongodb://127.0.0.1:27017/mernonedb', { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect('mongodb+srv://tafsir:4BF66GfvMmYwERiC@cluster0.57kzw84.mongodb.net/', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => app.listen(5000, () => console.log(`Listening at Port 5000`)))
   .catch((error) => console.log(`${error} did not connect`));
 
